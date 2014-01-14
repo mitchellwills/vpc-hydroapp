@@ -122,9 +122,9 @@
 					var info = L.control({position: "topright"});
 					info.onAdd = function (map) {
 						var htmlContent = '<div class="info">'+
-							'<h4>Key (m/s)</h4>'+
+							'<h4>Water Velocity (m/s)</h4>'+
 							'<div>'+
-							'<div ng-repeat="value in velScaleValues"><span style="width:40px;height:20px;display:inline-block;vertical-align:middle;background:{{colorScale(value).hex()}}"/><span style="vertical-align:middle;margin-left:2px;">{{value*velDivisor | number:2}}</span></div>'+
+							'<div ng-repeat="value in velScaleValues"><span style="width:60px;height:20px;display:inline-block;vertical-align:middle;background:{{colorScale(value).hex()}}"/><span style="vertical-align:middle;margin-left:2px;">{{value*velDivisor | number:2}}</span></div>'+
 							'</div>'+
 							'</div>';
 						$scope.compiled = $compile(htmlContent)($scope);
@@ -156,7 +156,7 @@
 					$('#aboutPanel').hide();
 				}
 				
-				$scope.colorScale = chroma.interpolate.bezier(['white', '#00ffff', 'green', 'yellow', 'red']);
+				$scope.colorScale = chroma.interpolate.bezier(['white', '#00ffff', '#00FF00', 'yellow', 'red']);
 				$scope.velDivisor = 0.5;
 				$scope.velScaleValues = new Array();
 				for(var i = 0; i<2.01; i+=0.1)$scope.velScaleValues.push(i);
